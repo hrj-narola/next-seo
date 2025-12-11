@@ -26,7 +26,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
                     <div className="flex items-center gap-1">
                         <span>★</span>
                         <span>{product.rating.rate}</span>
-                        <span className="text-neutral-300">({product.rating.count})</span>
+                        <span className="text-neutral-500">({product.rating.count})</span>
                     </div>
                 </div>
                 <h2 className="mb-2 text-lg font-semibold leading-tight text-neutral-900 dark:text-white">

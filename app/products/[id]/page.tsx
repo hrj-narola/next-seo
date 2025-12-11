@@ -23,16 +23,22 @@ export async function generateMetadata({
         const product = await getProduct(id);
         return {
             title: product.title,
-            description: product.description.substring(0, 160),
+            description: product.description,
+            alternates: {
+                canonical: `https://next-seo.com/products/${product.id}`,
+            },
             openGraph: {
                 title: product.title,
                 description: product.description,
-                images: [{ url: product.image }],
+                images: [product.image],
+                url: `https://next-seo.com/products/${product.id}`,
+                type: "website",
             },
         };
     } catch (e) {
         return {
             title: "Product Not Found",
+            description: "The product you are looking for does not exist.",
         };
     }
 }
@@ -63,11 +69,6 @@ export default async function ProductPage({
             price: product.price,
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
-        },
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: product.rating.rate,
-            reviewCount: product.rating.count,
         },
     };
 

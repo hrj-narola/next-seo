@@ -53,6 +53,11 @@ export default async function Home() {
 									</a>
 								</li>
 								<li>
+									<a href="/products" className="hover:text-neutral-900 dark:hover:text-white">
+										Products
+									</a>
+								</li>
+								<li>
 									<a href="/about" className="hover:text-neutral-900 dark:hover:text-white">
 										About
 									</a>

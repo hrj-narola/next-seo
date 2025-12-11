@@ -13,32 +13,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("http://localhost:3000"),
+	metadataBase: new URL("http://localhost:3001"),
 	title: {
 		default: "Next.js SEO Masterclass",
 		template: "%s | Next.js SEO Masterclass",
 	},
 	description:
 		"A comprehensive guide and demo of SEO optimization techniques in Next.js 14+, including SSR, SSG, Semantic HTML, and JSON-LD.",
-	keywords: [
-		"Next.js",
-		"SEO",
-		"SSR",
-		"SSG",
-		"Semantic HTML",
-		"Web Development",
-		"JavaScript",
-		"React",
-	],
+	keywords: ["Next.js", "SEO", "SSR", "SSG", "Semantic HTML", "Web Development", "JavaScript", "React"],
 	authors: [{ name: "Your Name", url: "https://yourwebsite.com" }],
 	creator: "Your Name",
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "http://localhost:3000",
+		url: "http://localhost:3001",
 		title: "Next.js SEO Masterclass",
-		description:
-			"Learn how to implement perfect SEO in Next.js with SSR, SSG, and Semantic HTML.",
+		description: "Learn how to implement perfect SEO in Next.js with SSR, SSG, and Semantic HTML.",
 		siteName: "Next.js SEO Masterclass",
 		images: [
 			{
@@ -52,8 +42,7 @@ export const metadata: Metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Next.js SEO Masterclass",
-		description:
-			"Learn how to implement perfect SEO in Next.js with SSR, SSG, and Semantic HTML.",
+		description: "Learn how to implement perfect SEO in Next.js with SSR, SSG, and Semantic HTML.",
 		images: ["/opengraph-image.png"],
 		creator: "@yourhandle",
 	},
