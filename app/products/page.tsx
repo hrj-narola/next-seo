@@ -9,7 +9,21 @@ import { Product } from "@/lib/types";
 
 export const metadata: Metadata = {
     title: "All Products | Next.js SEO Masterclass",
-    description: "Browse our complete list of products. Statically generated (SSG) for optimal performance.",
+    description: "Browse our complete catalog of top-rated products. Experience the speed of Static Site Generation (SSG) with our Next.js SEO demo, featuring instant page loads and optimized metadata.",
+    openGraph: {
+        title: "All Products | Next.js SEO Masterclass",
+        description: "Browse our complete catalog of top-rated products. Experience the speed of Static Site Generation (SSG) with our Next.js SEO demo.",
+        type: "website",
+        url: "/products",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "All Products | Next.js SEO Masterclass",
+        description: "Browse our complete catalog of top-rated products. Experience the speed of Static Site Generation (SSG).",
+    },
+    alternates: {
+        canonical: "/products",
+    },
 };
 
 export default async function ProductsPage() {
