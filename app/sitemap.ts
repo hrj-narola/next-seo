@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getProducts } from "@/lib/api";
 import { Product } from "@/lib/types";
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	let products: Product[] = [];

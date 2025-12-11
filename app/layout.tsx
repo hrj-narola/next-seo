@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("http://localhost:3001"),
+	metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001"),
 	title: {
 		default: "Next.js SEO Masterclass",
 		template: "%s | Next.js SEO Masterclass",
