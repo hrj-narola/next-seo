@@ -14,16 +14,12 @@ export async function getProducts(): Promise<Product[]> {
         });
         if (!res.ok) {
             console.warn(`[getProducts] Failed to fetch products: ${res.status} ${res.statusText}`);
-            // Return empty array instead of throwing to allow build to proceed if API fails
-            // Depending on preference, we might want to throw. But for "fixing build 403", this is safer.
-            // However, the user might want to know it failed.
-            // Let's stick to throwing but with better logging, and handle the try-catch in the calling components.
-            throw new Error(`Failed to fetch products: ${res.status} ${res.statusText}`);
+            return [];
         }
         return res.json();
     } catch (error) {
         console.error("[getProducts] Error:", error);
-        throw error;
+        return [];
     }
 }
 
