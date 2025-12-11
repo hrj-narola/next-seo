@@ -7,24 +7,26 @@ import { Product } from "@/lib/types";
 // we are not using 'force-dynamic' or dynamic functions (cookies, headers).
 // The data fetch will be cached.
 
-export const metadata: Metadata = {
-    title: "All Products | Next.js SEO Masterclass",
-    description: "Browse our complete catalog of top-rated products. Experience the speed of Static Site Generation (SSG) with our Next.js SEO demo, featuring instant page loads and optimized metadata.",
-    openGraph: {
-        title: "All Products | Next.js SEO Masterclass",
-        description: "Browse our complete catalog of top-rated products. Experience the speed of Static Site Generation (SSG) with our Next.js SEO demo.",
-        type: "website",
-        url: "/products",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "All Products | Next.js SEO Masterclass",
-        description: "Browse our complete catalog of top-rated products. Experience the speed of Static Site Generation (SSG).",
-    },
-    alternates: {
-        canonical: "/products",
-    },
-};
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+        title: "All Products",
+        description: "Browse our catalog of top-rated products with instant SSG loading. Experience the best of Next.js SEO optimization.",
+        openGraph: {
+            title: "All Products | Next.js SEO Masterclass",
+            description: "Browse our catalog of top-rated products with instant SSG loading. Experience the best of Next.js SEO optimization.",
+            type: "website",
+            url: "/products",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "All Products | Next.js SEO Masterclass",
+            description: "Browse our catalog of top-rated products with instant SSG loading.",
+        },
+        alternates: {
+            canonical: "/products",
+        },
+    };
+}
 
 export default async function ProductsPage() {
     let products: Product[] = [];
