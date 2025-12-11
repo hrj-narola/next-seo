@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getProducts } from "@/lib/api";
 import ProductCard from "@/components/ProductCard";
+import { Product } from "@/lib/types";
 
 // SSG: This page will be statically generated at build time because
 // we are not using 'force-dynamic' or dynamic functions (cookies, headers).
@@ -12,7 +13,12 @@ export const metadata: Metadata = {
 };
 
 export default async function ProductsPage() {
-    const products = await getProducts();
+    let products: Product[] = [];
+    try {
+        products = await getProducts();
+    } catch (e) {
+        console.error("Failed to fetch products for static page:", e);
+    }
 
     // JSON-LD for Product List
     const jsonLd = {

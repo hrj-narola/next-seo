@@ -6,10 +6,16 @@ import { getProduct, getProducts } from "@/lib/api";
 
 // SSG: Generate static params for all products
 export async function generateStaticParams() {
-    const products = await getProducts();
-    return products.map((product) => ({
-        id: product.id.toString(),
-    }));
+    try {
+        const products = await getProducts();
+        return products.map((product) => ({
+            id: product.id.toString(),
+        }));
+    } catch (e) {
+        console.error("Failed to generate static params (SSG) - API might be blocking build requests:", e);
+        // Fallback to on-demand generation (ISR style) so build doesn't fail
+        return [];
+    }
 }
 
 // Dynamic Metadata
